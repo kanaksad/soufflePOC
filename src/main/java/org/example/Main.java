@@ -14,7 +14,8 @@ public class Main {
         try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
              Statement stmt = conn.createStatement();
         ) {
-
+            String QUERY3 = "UPDATE Employees SET age="+ args[0] +" where id=" + args[1];
+            stmt.executeQuery(QUERY3);
             stmt.executeUpdate(QUERY1);
             ResultSet rs=stmt.executeQuery(QUERY2);
             // Extract data from result set
